@@ -30,10 +30,10 @@ function baseOptions(extra = {}) {
     animation: matchMedia("(prefers-reduced-motion: reduce)").matches ? false : { duration: 350 },
     interaction: { mode: "index", intersect: false },
     color: c.text,
-    font: { family: "Inter, system-ui, sans-serif" },
+    font: { family: "Manrope, system-ui, sans-serif" },
     plugins: {
       legend: { labels: { color: c.text, boxWidth: 10, boxHeight: 10, usePointStyle: true, pointStyle: "rectRounded" } },
-      tooltip: { titleFont: { family: "Space Grotesk, system-ui" }, bodyFont: { family: "Inter, system-ui" } },
+      tooltip: { titleFont: { family: "Manrope, system-ui" }, bodyFont: { family: "Manrope, system-ui" } },
     },
     ...extra,
   };

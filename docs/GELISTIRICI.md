@@ -72,7 +72,7 @@ site/index.html    tek HTML kabuğu (5 görünüm, katı CSP)
 site/css/          tokens, base, nav, intro, home, map, panel, sections
 site/js/           main, router, state, views, i18n, format, data, intro, hero, reveal,
                    home, map, tooltip, panel, charts, pages, guard
-site/fonts/        Space Grotesk + Inter (yerel woff2, SIL OFL 1.1; lisans dosyaları aynı klasörde)
+site/fonts/        Manrope (yerel woff2, @fontsource-variable/manrope 5.3.0, SIL OFL 1.1; lisans aynı klasörde)
 ```
 Build adımı veya npm bağımlılığı yoktur; tek dış script Chart.js'tir (SRI hash ile).
 
