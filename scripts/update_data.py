@@ -116,7 +116,7 @@ def update_site_data(
         },
     )
 
-    # İl bazlı aylık tahmini geçmiş (README'deki sözleşme). Aylık özetle aynı kural:
+    # İl bazlı aylık tahmini geçmiş (docs/GELISTIRICI.md'deki format). Aylık özetle aynı kural:
     # kayıtlı tam aylar korunur, pencerenin başındaki kısmi ay onları ezmez.
     existing_history = _read_json(data_dir / "province-history.json")
     kept: dict[str, list] = {}
