@@ -2,8 +2,8 @@ name: Saatlik Veri Güncelleme
 
 on:
   schedule:
-    # Her saat başı 12. dakikada çalışır (EPİAŞ saatlik verisinin yayınlanmasını bekler)
-    - cron: "12 * * * *"
+    # Her saat başı 17. dakikada çalışır (EPİAŞ saatlik verisinin yayınlanmasını bekler)
+    - cron: "17 * * * *"
   workflow_dispatch:
     inputs:
       backfill_year:
