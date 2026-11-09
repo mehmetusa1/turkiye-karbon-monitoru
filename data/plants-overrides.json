@@ -1,0 +1,11 @@
+{
+ "_aciklama": "site/data/plants.json için elle düzeltmeler. remove: kaldırılacak santral id'leri; move: id -> doğru il; add: listede olmayan santraller (group: coal, gas, hydro, wind, solar, geothermal, biomass, nuclear, other). Değiştirdikten sonra: py scripts/build_plants.py <csv>",
+ "remove": [
+  "WRI1018724"
+ ],
+ "move": {},
+ "add": [],
+ "_notlar": {
+  "WRI1018724": "\"Kütahya\" 50 MW kömür: koordinatları Zonguldak'ta, adı il adı; GPPD hatalı/çift kayıt şüphesi (2026-11-08 kaldırıldı)"
+ }
+}

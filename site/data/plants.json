@@ -1,0 +1,1037 @@
+{
+ "source": "WRI Global Power Plant Database v1.3.0",
+ "license": "CC BY 4.0",
+ "as_of": "2021",
+ "provinces": {
+  "Adana": [
+   {
+    "id": "WRI1018925",
+    "name": "Çatalan Dam",
+    "group": "hydro",
+    "capacity_mw": 169.0
+   },
+   {
+    "id": "WKS0071371",
+    "name": "Basoren",
+    "group": "solar",
+    "capacity_mw": 10.0
+   },
+   {
+    "id": "WKS0071386",
+    "name": "Imamoglu",
+    "group": "solar",
+    "capacity_mw": 5.2
+   },
+   {
+    "id": "WKS0071389",
+    "name": "Tarsus",
+    "group": "solar",
+    "capacity_mw": 4.6
+   }
+  ],
+  "Adıyaman": [
+   {
+    "id": "WRI1018917",
+    "name": "Atatürk Dam",
+    "group": "hydro",
+    "capacity_mw": 2400.0
+   },
+   {
+    "id": "WKS0071707",
+    "name": "Adiyaman Hive",
+    "group": "solar",
+    "capacity_mw": 10.0
+   }
+  ],
+  "Ankara": [
+   {
+    "id": "WRI1018761",
+    "name": "Baymina Ankara Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 798.0
+   },
+   {
+    "id": "WRI1018710",
+    "name": "Çayırhan power station",
+    "group": "coal",
+    "capacity_mw": 620.0
+   },
+   {
+    "id": "WRI1018930",
+    "name": "Gökçekaya Dam",
+    "group": "hydro",
+    "capacity_mw": 278.0
+   },
+   {
+    "id": "WRI1018952",
+    "name": "Sarıyar Dam",
+    "group": "hydro",
+    "capacity_mw": 160.0
+   },
+   {
+    "id": "WKS0071246",
+    "name": "Fadilli",
+    "group": "solar",
+    "capacity_mw": 4.8
+   }
+  ],
+  "Antalya": [
+   {
+    "id": "WRI1018754",
+    "name": "Aksa Antalya Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 1150.0
+   },
+   {
+    "id": "WRI1018949",
+    "name": "Oymapinar Dam",
+    "group": "hydro",
+    "capacity_mw": 540.0
+   },
+   {
+    "id": "WKS0065898",
+    "name": "Korkuteli",
+    "group": "solar",
+    "capacity_mw": 4.5
+   }
+  ],
+  "Artvin": [
+   {
+    "id": "WRI1018926",
+    "name": "Deriner Dam",
+    "group": "hydro",
+    "capacity_mw": 670.0
+   },
+   {
+    "id": "WRI1018922",
+    "name": "Borçka Dam",
+    "group": "hydro",
+    "capacity_mw": 300.0
+   },
+   {
+    "id": "WRI1018947",
+    "name": "Muratlı Dam",
+    "group": "hydro",
+    "capacity_mw": 115.0
+   },
+   {
+    "id": "WRI1018693",
+    "name": "EÜAS Hopa Termik Sant. Artvin",
+    "group": "other",
+    "capacity_mw": 50.0
+   }
+  ],
+  "Aydın": [
+   {
+    "id": "WRI1018954",
+    "name": "Efeler",
+    "group": "geothermal",
+    "capacity_mw": 114.0
+   },
+   {
+    "id": "WRI1018956",
+    "name": "Pamukören",
+    "group": "geothermal",
+    "capacity_mw": 68.0
+   },
+   {
+    "id": "WRI1018957",
+    "name": "Galip Hoca Germencik",
+    "group": "geothermal",
+    "capacity_mw": 47.0
+   },
+   {
+    "id": "WRI1018960",
+    "name": "Dora 3",
+    "group": "geothermal",
+    "capacity_mw": 34.0
+   },
+   {
+    "id": "WRI1018962",
+    "name": "Deniz",
+    "group": "geothermal",
+    "capacity_mw": 24.0
+   },
+   {
+    "id": "WRI1018966",
+    "name": "Pamukören 2",
+    "group": "geothermal",
+    "capacity_mw": 23.0
+   },
+   {
+    "id": "WRI1018967",
+    "name": "Dora 4",
+    "group": "geothermal",
+    "capacity_mw": 17.0
+   },
+   {
+    "id": "WRI1018969",
+    "name": "Gümüşköy",
+    "group": "geothermal",
+    "capacity_mw": 13.0
+   }
+  ],
+  "Balıkesir": [
+   {
+    "id": "WRI1018755",
+    "name": "Bandırma Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 931.0
+   },
+   {
+    "id": "WRI1018764",
+    "name": "Bandirma 2 Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 607.0
+   },
+   {
+    "id": "WRI1018824",
+    "name": "Bandırma Kurşunlu",
+    "group": "wind",
+    "capacity_mw": 87.0
+   },
+   {
+    "id": "WRI1018856",
+    "name": "Tokat",
+    "group": "wind",
+    "capacity_mw": 40.0
+   },
+   {
+    "id": "WRI1018875",
+    "name": "Kapidag",
+    "group": "wind",
+    "capacity_mw": 28.0
+   }
+  ],
+  "Bolu": [
+   {
+    "id": "WRI1018719",
+    "name": "Bolu Göynük power station",
+    "group": "coal",
+    "capacity_mw": 270.0
+   }
+  ],
+  "Burdur": [
+   {
+    "id": "WKS0066689",
+    "name": "Burdur 18",
+    "group": "solar",
+    "capacity_mw": 8.3
+   },
+   {
+    "id": "WKS0068672",
+    "name": "Çallıca",
+    "group": "solar",
+    "capacity_mw": 6.2
+   },
+   {
+    "id": "WKS0065436",
+    "name": "Burdur 5",
+    "group": "solar",
+    "capacity_mw": 4.8
+   }
+  ],
+  "Bursa": [
+   {
+    "id": "WRI1018751",
+    "name": "Bursa Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 1432.0
+   },
+   {
+    "id": "WRI1018766",
+    "name": "Bursa Doğalgaz Termik Santrali",
+    "group": "gas",
+    "capacity_mw": 486.0
+   },
+   {
+    "id": "WRI1018770",
+    "name": "Bosen Bursa Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 264.0
+   },
+   {
+    "id": "WRI1018721",
+    "name": "Orhaneli power station",
+    "group": "coal",
+    "capacity_mw": 210.0
+   },
+   {
+    "id": "WRI1018927",
+    "name": "Devecikonağı Dam",
+    "group": "hydro",
+    "capacity_mw": 29.0
+   }
+  ],
+  "Denizli": [
+   {
+    "id": "WRI1018763",
+    "name": "Turcas Denizli Doğalgaz S.",
+    "group": "gas",
+    "capacity_mw": 775.0
+   },
+   {
+    "id": "WRI1018955",
+    "name": "Kizildere 2",
+    "group": "geothermal",
+    "capacity_mw": 80.0
+   },
+   {
+    "id": "WRI1018968",
+    "name": "Kızıldere (Zorlu)",
+    "group": "geothermal",
+    "capacity_mw": 15.0
+   },
+   {
+    "id": "WKS0069935",
+    "name": "Denizli Prime",
+    "group": "solar",
+    "capacity_mw": 14.0
+   },
+   {
+    "id": "WKS0065415",
+    "name": "Denizli Karine",
+    "group": "solar",
+    "capacity_mw": 7.4
+   },
+   {
+    "id": "WKS0073450",
+    "name": "Pinarkent A",
+    "group": "solar",
+    "capacity_mw": 5.0
+   }
+  ],
+  "Diyarbakır": [
+   {
+    "id": "WRI1018918",
+    "name": "Batman Dam",
+    "group": "hydro",
+    "capacity_mw": 198.0
+   },
+   {
+    "id": "WRI1018928",
+    "name": "Dicle Dam",
+    "group": "hydro",
+    "capacity_mw": 110.0
+   }
+  ],
+  "Elazığ": [
+   {
+    "id": "WRI1018939",
+    "name": "Keban Dam",
+    "group": "hydro",
+    "capacity_mw": 1330.0
+   },
+   {
+    "id": "WRI1018950",
+    "name": "Özlüce Dam",
+    "group": "hydro",
+    "capacity_mw": 170.0
+   },
+   {
+    "id": "WKS0072985",
+    "name": "Yalnız B",
+    "group": "solar",
+    "capacity_mw": 30.0
+   },
+   {
+    "id": "WKS0072080",
+    "name": "Ekinözü",
+    "group": "solar",
+    "capacity_mw": 10.0
+   },
+   {
+    "id": "WKS0072984",
+    "name": "Yalnız A",
+    "group": "solar",
+    "capacity_mw": 8.0
+   },
+   {
+    "id": "WKS0064147",
+    "name": "Şahinkaya Köyü",
+    "group": "solar",
+    "capacity_mw": 8.0
+   },
+   {
+    "id": "WKS0068674",
+    "name": "Yemişlik",
+    "group": "solar",
+    "capacity_mw": 7.4
+   }
+  ],
+  "Erzurum": [
+   {
+    "id": "WKS0071381",
+    "name": "Askale",
+    "group": "solar",
+    "capacity_mw": 5.9
+   },
+   {
+    "id": "WKS0064148",
+    "name": "Yakutiye",
+    "group": "solar",
+    "capacity_mw": 5.0
+   },
+   {
+    "id": "WKS0071392",
+    "name": "Uzunahmet",
+    "group": "solar",
+    "capacity_mw": 4.3
+   }
+  ],
+  "Eskişehir": [
+   {
+    "id": "WRI1018723",
+    "name": "Yunus Emre Termik Santrali",
+    "group": "coal",
+    "capacity_mw": 145.0
+   }
+  ],
+  "Gaziantep": [
+   {
+    "id": "WRI1018921",
+    "name": "Birecik Dam",
+    "group": "hydro",
+    "capacity_mw": 672.0
+   },
+   {
+    "id": "WKS0071148",
+    "name": "Gaziantep",
+    "group": "solar",
+    "capacity_mw": 25.0
+   },
+   {
+    "id": "WKS0069259",
+    "name": "Kahramanmaraş",
+    "group": "solar",
+    "capacity_mw": 19.0
+   },
+   {
+    "id": "WKS0071377",
+    "name": "Araban",
+    "group": "solar",
+    "capacity_mw": 6.6
+   }
+  ],
+  "Hatay": [
+   {
+    "id": "WRI1018704",
+    "name": "İsken Sugözü power station",
+    "group": "coal",
+    "capacity_mw": 1210.0
+   },
+   {
+    "id": "WRI1018705",
+    "name": "İskenderun Atlas Termik Santrali",
+    "group": "coal",
+    "capacity_mw": 1200.0
+   },
+   {
+    "id": "WRI1018756",
+    "name": "Erzin Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 904.0
+   }
+  ],
+  "Kahramanmaraş": [
+   {
+    "id": "WRI1018701",
+    "name": "Afşin Elbistan Termik Santrali",
+    "group": "coal",
+    "capacity_mw": 2795.0
+   },
+   {
+    "id": "WRI1018919",
+    "name": "Berke Dam",
+    "group": "hydro",
+    "capacity_mw": 510.0
+   },
+   {
+    "id": "WRI1018953",
+    "name": "Sir",
+    "group": "hydro",
+    "capacity_mw": 284.0
+   },
+   {
+    "id": "WRI1018946",
+    "name": "Menzelet Dam",
+    "group": "hydro",
+    "capacity_mw": 248.0
+   },
+   {
+    "id": "WKS0066817",
+    "name": "Türkoğlu",
+    "group": "solar",
+    "capacity_mw": 10.0
+   }
+  ],
+  "Karaman": [
+   {
+    "id": "WRI1018929",
+    "name": "Gezende Dam",
+    "group": "hydro",
+    "capacity_mw": 159.0
+   }
+  ],
+  "Kayseri": [
+   {
+    "id": "WKS0069362",
+    "name": "Kayseri OSB2",
+    "group": "solar",
+    "capacity_mw": 45.0
+   },
+   {
+    "id": "WKS0071235",
+    "name": "Bünyan A",
+    "group": "solar",
+    "capacity_mw": 15.0
+   },
+   {
+    "id": "WKS0071240",
+    "name": "Incesu B",
+    "group": "solar",
+    "capacity_mw": 15.0
+   },
+   {
+    "id": "WKS0071243",
+    "name": "Güzelöz",
+    "group": "solar",
+    "capacity_mw": 7.0
+   },
+   {
+    "id": "WKS0066162",
+    "name": "Kayseri 6",
+    "group": "solar",
+    "capacity_mw": 7.0
+   },
+   {
+    "id": "WKS0068671",
+    "name": "Sarıoğlan",
+    "group": "solar",
+    "capacity_mw": 6.3
+   },
+   {
+    "id": "WKS0064276",
+    "name": "Kayseri OSB",
+    "group": "solar",
+    "capacity_mw": 6.0
+   },
+   {
+    "id": "WKS0071239",
+    "name": "Ürgüp A",
+    "group": "solar",
+    "capacity_mw": 5.0
+   }
+  ],
+  "Kocaeli": [
+   {
+    "id": "WRI1018813",
+    "name": "İzmit İpekkağıt Termik Santrali",
+    "group": "gas",
+    "capacity_mw": 16.0
+   }
+  ],
+  "Konya": [
+   {
+    "id": "WKS0073069",
+    "name": "Cumra Koyuncu",
+    "group": "solar",
+    "capacity_mw": 18.5
+   },
+   {
+    "id": "WKS0068596",
+    "name": "Kızören",
+    "group": "solar",
+    "capacity_mw": 18.0
+   },
+   {
+    "id": "WKS0068670",
+    "name": "Cihanbeyli",
+    "group": "solar",
+    "capacity_mw": 12.0
+   },
+   {
+    "id": "WKS0072085",
+    "name": "Eğribayat",
+    "group": "solar",
+    "capacity_mw": 11.0
+   },
+   {
+    "id": "WRI1018972",
+    "name": "Makascı Mühendislik",
+    "group": "solar",
+    "capacity_mw": 10.0
+   },
+   {
+    "id": "WKS0071373",
+    "name": "Acıpınar",
+    "group": "solar",
+    "capacity_mw": 9.1
+   },
+   {
+    "id": "WKS0068673",
+    "name": "Altınekin",
+    "group": "solar",
+    "capacity_mw": 8.4
+   },
+   {
+    "id": "WKS0068597",
+    "name": "Karapinar",
+    "group": "solar",
+    "capacity_mw": 4.0
+   }
+  ],
+  "Kütahya": [
+   {
+    "id": "WRI1018711",
+    "name": "Seyitömer power station",
+    "group": "coal",
+    "capacity_mw": 600.0
+   },
+   {
+    "id": "WRI1018715",
+    "name": "Tunçbilek Kütahya power station",
+    "group": "coal",
+    "capacity_mw": 365.0
+   },
+   {
+    "id": "WRI1018722",
+    "name": "Çolakoğlu Termik Santrali",
+    "group": "coal",
+    "capacity_mw": 190.0
+   },
+   {
+    "id": "WRI1018725",
+    "name": "Polat power station",
+    "group": "coal",
+    "capacity_mw": 51.0
+   }
+  ],
+  "Kırklareli": [
+   {
+    "id": "WRI1018753",
+    "name": "Hamitabat Termik Santrali",
+    "group": "gas",
+    "capacity_mw": 1156.0
+   }
+  ],
+  "Kırıkkale": [
+   {
+    "id": "WRI1018765",
+    "name": "İç Anadolu Doğalgaz Kombine Çevrim Santrali",
+    "group": "gas",
+    "capacity_mw": 560.0
+   },
+   {
+    "id": "WRI1018933",
+    "name": "Hirfanlı Dam",
+    "group": "hydro",
+    "capacity_mw": 128.0
+   },
+   {
+    "id": "WKS0071390",
+    "name": "Kaman",
+    "group": "solar",
+    "capacity_mw": 4.6
+   }
+  ],
+  "Malatya": [
+   {
+    "id": "WRI1018937",
+    "name": "Karakaya Dam",
+    "group": "hydro",
+    "capacity_mw": 1800.0
+   }
+  ],
+  "Manisa": [
+   {
+    "id": "WRI1018707",
+    "name": "Soma power station",
+    "group": "coal",
+    "capacity_mw": 990.0
+   },
+   {
+    "id": "WRI1018958",
+    "name": "Alaşehir",
+    "group": "geothermal",
+    "capacity_mw": 45.0
+   },
+   {
+    "id": "WRI1018877",
+    "name": "GERES",
+    "group": "wind",
+    "capacity_mw": 27.5
+   },
+   {
+    "id": "WKS0071227",
+    "name": "Kula Manisa",
+    "group": "solar",
+    "capacity_mw": 20.6
+   },
+   {
+    "id": "WKS0071230",
+    "name": "Akhisar Asunim",
+    "group": "solar",
+    "capacity_mw": 19.8
+   },
+   {
+    "id": "WKS0073452",
+    "name": "Hıroğlu A",
+    "group": "solar",
+    "capacity_mw": 15.0
+   },
+   {
+    "id": "WKS0069858",
+    "name": "Akçaköy",
+    "group": "solar",
+    "capacity_mw": 8.5
+   }
+  ],
+  "Mardin": [
+   {
+    "id": "WRI1018934",
+    "name": "Ilısu Dam",
+    "group": "hydro",
+    "capacity_mw": 1200.0
+   }
+  ],
+  "Mersin": [
+   {
+    "id": "WKS0066825",
+    "name": "Erdemli",
+    "group": "solar",
+    "capacity_mw": 35.0
+   },
+   {
+    "id": "WKS0071379",
+    "name": "Dayıcık",
+    "group": "solar",
+    "capacity_mw": 6.6
+   },
+   {
+    "id": "WKS0071394",
+    "name": "Şeyhömer",
+    "group": "solar",
+    "capacity_mw": 5.5
+   }
+  ],
+  "Muğla": [
+   {
+    "id": "WRI1018708",
+    "name": "Kemerköy power station",
+    "group": "coal",
+    "capacity_mw": 630.0
+   },
+   {
+    "id": "WRI1018709",
+    "name": "Yatağan power station",
+    "group": "coal",
+    "capacity_mw": 630.0
+   },
+   {
+    "id": "WRI1018713",
+    "name": "Yeniköy power station",
+    "group": "coal",
+    "capacity_mw": 420.0
+   }
+  ],
+  "Nevşehir": [
+   {
+    "id": "WRI1018971",
+    "name": "Derinkuyu Güneş",
+    "group": "solar",
+    "capacity_mw": 17.0
+   }
+  ],
+  "Niğde": [
+   {
+    "id": "WKS0073451",
+    "name": "Büğet A",
+    "group": "solar",
+    "capacity_mw": 7.0
+   },
+   {
+    "id": "WKS0071387",
+    "name": "Yesilgolcuk",
+    "group": "solar",
+    "capacity_mw": 5.0
+   }
+  ],
+  "Osmaniye": [
+   {
+    "id": "WRI1018825",
+    "name": "Osmaniye",
+    "group": "wind",
+    "capacity_mw": 135.0
+   },
+   {
+    "id": "WKS0066810",
+    "name": "Demercit",
+    "group": "solar",
+    "capacity_mw": 9.0
+   }
+  ],
+  "Sakarya": [
+   {
+    "id": "WRI1018749",
+    "name": "Enka Gebze Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 1595.0
+   },
+   {
+    "id": "WRI1018762",
+    "name": "Enka Adapazarı Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 770.0
+   }
+  ],
+  "Samsun": [
+   {
+    "id": "WRI1018757",
+    "name": "OMV Samsun Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 887.0
+   },
+   {
+    "id": "WRI1018759",
+    "name": "Cengiz Enerji Samsun",
+    "group": "gas",
+    "capacity_mw": 849.0
+   },
+   {
+    "id": "WRI1018914",
+    "name": "Altınkaya Dam",
+    "group": "hydro",
+    "capacity_mw": 700.0
+   },
+   {
+    "id": "WRI1018932",
+    "name": "Hasan Uğurlu Dam",
+    "group": "hydro",
+    "capacity_mw": 500.0
+   },
+   {
+    "id": "WRI1018699",
+    "name": "Samsun1-2",
+    "group": "other",
+    "capacity_mw": 162.6
+   },
+   {
+    "id": "WRI1018915",
+    "name": "Aslantaş Dam",
+    "group": "hydro",
+    "capacity_mw": 138.0
+   }
+  ],
+  "Sinop": [
+   {
+    "id": "WRI1018923",
+    "name": "Boyabat Dam",
+    "group": "hydro",
+    "capacity_mw": 513.0
+   }
+  ],
+  "Sivas": [
+   {
+    "id": "WRI1018712",
+    "name": "Kangal power station",
+    "group": "coal",
+    "capacity_mw": 537.0
+   },
+   {
+    "id": "WRI1018941",
+    "name": "Kılıçkaya Dam",
+    "group": "hydro",
+    "capacity_mw": 124.0
+   },
+   {
+    "id": "WKS0068675",
+    "name": "Sivas",
+    "group": "solar",
+    "capacity_mw": 19.1
+   },
+   {
+    "id": "WKS0071245",
+    "name": "Sizir",
+    "group": "solar",
+    "capacity_mw": 4.8
+   }
+  ],
+  "Tekirdağ": [
+   {
+    "id": "WRI1018768",
+    "name": "Unimar Marmara Ereğlisi Doğalgaz Kombine Çevrim Santrali",
+    "group": "gas",
+    "capacity_mw": 478.0
+   },
+   {
+    "id": "WRI1018845",
+    "name": "Balabani",
+    "group": "wind",
+    "capacity_mw": 50.0
+   }
+  ],
+  "Tokat": [
+   {
+    "id": "WKS0068676",
+    "name": "Turhal",
+    "group": "solar",
+    "capacity_mw": 4.8
+   }
+  ],
+  "Uşak": [
+   {
+    "id": "WKS0071376",
+    "name": "Aktaş",
+    "group": "solar",
+    "capacity_mw": 7.0
+   }
+  ],
+  "Zonguldak": [
+   {
+    "id": "WRI1018702",
+    "name": "Zonguldak Eren (ZETES)",
+    "group": "coal",
+    "capacity_mw": 2090.0
+   },
+   {
+    "id": "WRI1018718",
+    "name": "Çatalağzı-B power station",
+    "group": "coal",
+    "capacity_mw": 314.0
+   }
+  ],
+  "Çanakkale": [
+   {
+    "id": "WRI1075555",
+    "name": "Cenal power station",
+    "group": "coal",
+    "capacity_mw": 1320.0
+   },
+   {
+    "id": "WRI1018706",
+    "name": "İÇDAŞ Bekirli-2 power station",
+    "group": "coal",
+    "capacity_mw": 1200.0
+   },
+   {
+    "id": "WRI1018714",
+    "name": "İÇDAŞ Biga Termik Santrali",
+    "group": "coal",
+    "capacity_mw": 1200.0
+   },
+   {
+    "id": "WRI1018717",
+    "name": "Çan-1 power station",
+    "group": "coal",
+    "capacity_mw": 320.0
+   },
+   {
+    "id": "WRI1018899",
+    "name": "Bozcaada",
+    "group": "wind",
+    "capacity_mw": 10.0
+   }
+  ],
+  "Çankırı": [
+   {
+    "id": "WKS0071375",
+    "name": "Eskipazar",
+    "group": "solar",
+    "capacity_mw": 7.6
+   }
+  ],
+  "Çorum": [
+   {
+    "id": "WRI1018948",
+    "name": "Obruk Dam",
+    "group": "hydro",
+    "capacity_mw": 202.0
+   },
+   {
+    "id": "WKS0071372",
+    "name": "Corum",
+    "group": "solar",
+    "capacity_mw": 9.4
+   }
+  ],
+  "İstanbul": [
+   {
+    "id": "WRI1018752",
+    "name": "Ambarlı B Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 1351.0
+   },
+   {
+    "id": "WRI1018760",
+    "name": "Ambarlı A Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 816.0
+   },
+   {
+    "id": "WRI1018692",
+    "name": "EÜAS Ambarlı FO Sant. Istanbul",
+    "group": "other",
+    "capacity_mw": 630.0
+   }
+  ],
+  "İzmir": [
+   {
+    "id": "WRI1018750",
+    "name": "Enka İzmir Doğalgaz Santrali",
+    "group": "gas",
+    "capacity_mw": 1520.0
+   },
+   {
+    "id": "WRI1018716",
+    "name": "İzdemir Enerji power station",
+    "group": "coal",
+    "capacity_mw": 350.0
+   },
+   {
+    "id": "WRI1018895",
+    "name": "Bozyaka",
+    "group": "wind",
+    "capacity_mw": 13.0
+   },
+   {
+    "id": "WKS0071378",
+    "name": "YeniFoca",
+    "group": "solar",
+    "capacity_mw": 6.6
+   },
+   {
+    "id": "WKS0072079",
+    "name": "Yeniba",
+    "group": "solar",
+    "capacity_mw": 5.9
+   },
+   {
+    "id": "WKS0071385",
+    "name": "Suleymanli",
+    "group": "solar",
+    "capacity_mw": 5.2
+   }
+  ],
+  "Şanlıurfa": [
+   {
+    "id": "WRI1018938",
+    "name": "Karkamış Dam",
+    "group": "hydro",
+    "capacity_mw": 192.0
+   },
+   {
+    "id": "WRI1018779",
+    "name": "Şanlıurfa OSB Enerji Santrali",
+    "group": "gas",
+    "capacity_mw": 146.0
+   },
+   {
+    "id": "WRI1018973",
+    "name": "Astor",
+    "group": "solar",
+    "capacity_mw": 9.0
+   }
+  ]
+ }
+}

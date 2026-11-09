@@ -1,0 +1,65 @@
+{
+ "is_sample": false,
+ "months": [
+  {
+   "month": "2025-12",
+   "avg_intensity": 504.7,
+   "avg_renewable_share": 0.306
+  },
+  {
+   "month": "2026-01",
+   "avg_intensity": 460.0,
+   "avg_renewable_share": 0.374
+  },
+  {
+   "month": "2026-02",
+   "avg_intensity": 375.7,
+   "avg_renewable_share": 0.548
+  },
+  {
+   "month": "2026-03",
+   "avg_intensity": 326.4,
+   "avg_renewable_share": 0.621
+  },
+  {
+   "month": "2026-04",
+   "avg_intensity": 283.9,
+   "avg_renewable_share": 0.67
+  },
+  {
+   "month": "2026-05",
+   "avg_intensity": 257.4,
+   "avg_renewable_share": 0.695
+  },
+  {
+   "month": "2026-06",
+   "avg_intensity": 307.4,
+   "avg_renewable_share": 0.635
+  },
+  {
+   "month": "2026-07",
+   "avg_intensity": 393.6,
+   "avg_renewable_share": 0.523
+  },
+  {
+   "month": "2026-08",
+   "avg_intensity": 398.0,
+   "avg_renewable_share": 0.512
+  },
+  {
+   "month": "2026-09",
+   "avg_intensity": 397.7,
+   "avg_renewable_share": 0.522
+  },
+  {
+   "month": "2026-10",
+   "avg_intensity": 412.4,
+   "avg_renewable_share": 0.497
+  },
+  {
+   "month": "2026-11",
+   "avg_intensity": 375.6,
+   "avg_renewable_share": 0.544
+  }
+ ]
+}

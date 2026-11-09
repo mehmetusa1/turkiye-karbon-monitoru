@@ -1,0 +1,29 @@
+# Gizli bilgiler: asla repoya girmesin
+.env
+*.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Sistem
+.DS_Store
+Thumbs.db
+.superpowers/
+
+# Anahtar/sertifika dosyaları
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Kişisel yerel ayarlar
+.claude/settings.local.json
+
+# eptr2 kütüphanesinin EPİAŞ oturum anahtarı (TGT) önbelleği — gizli
+.eptr2-tgt
+.eptr2*

@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Türkiye Elektrik Şebekesi Karbon Monitörü</title>
+  <meta name="description" content="Türkiye elektrik şebekesinde üretilen elektriğin saatlik karbon yoğunluğu ve 81 ilin tahmini üretim profili.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/space-grotesk-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/panel.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#view-root" data-i18n="skip_link">İçeriğe geç</a>
+
+  <!-- Giriş animasyonu: JS yoksa CSS kendi kendine söndürür -->
+  <div id="intro" class="intro">
+    <div class="intro-sky" aria-hidden="true"></div>
+    <div class="intro-mist intro-mist--1" aria-hidden="true"></div>
+    <div class="intro-mist intro-mist--2" aria-hidden="true"></div>
+    <div class="intro-mist intro-mist--3" aria-hidden="true"></div>
+    <div class="intro-stage" aria-hidden="true">
+      <svg id="intro-map" class="intro-map" viewBox="0 0 1000 460" focusable="false"></svg>
+    </div>
+    <button type="button" id="intro-skip" class="intro-skip" data-i18n="skip_intro">Girişi geç</button>
+  </div>
+
+  <header class="site-nav" id="site-nav">
+    <nav class="nav-inner" aria-label="Ana gezinme">
+      <a href="#/" class="brand">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span data-i18n="nav_brand">Karbon Monitörü</span>
+      </a>
+      <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only" data-i18n="nav_menu">Menü</span>
+      </button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#/" data-route="/" data-i18n="nav_home">Ana Sayfa</a></li>
+        <li><a href="#/harita" data-route="/harita" data-i18n="nav_map">Harita</a></li>
+        <li><a href="#/rehber" data-route="/rehber" data-i18n="nav_guide">Harita Rehberi</a></li>
+        <li><a href="#/veriler" data-route="/veriler" data-i18n="nav_data">Veriler</a></li>
+        <li><a href="#/yontem" data-route="/yontem" data-i18n="nav_method">Yöntem</a></li>
+      </ul>
+      <div class="nav-right">
+        <span id="sample-pill" class="sample-pill" hidden data-i18n="sample_short">Örnek veri</span>
+        <button type="button" id="lang-btn" class="lang-btn">EN</button>
+      </div>
+    </nav>
+    <div class="banners">
+      <p id="framed-banner" class="banner banner--warn" role="alert" hidden>
+        <span data-i18n="framed_warning"></span>
+        <a id="framed-link" href="./" target="_blank" rel="noopener noreferrer" data-i18n="framed_link"></a>
+      </p>
+      <p id="sample-banner" class="banner banner--info" role="status" hidden data-i18n="sample_banner"></p>
+      <p id="stale-banner" class="banner banner--warn" role="alert" hidden></p>
+      <p id="error" class="banner banner--error" role="alert" hidden data-i18n="error"></p>
+    </div>
+  </header>
+
+  <main id="view-root" tabindex="-1">
+
+    <!-- ============ ANA SAYFA ============ -->
+    <section class="view view--home" data-view="/" aria-labelledby="hero-title">
+      <div class="hero">
+        <div class="hero-art" id="hero-art" aria-hidden="true">
+          <div class="hero-glow"></div>
+          <svg id="hero-map" class="hero-map" viewBox="0 0 1000 460" focusable="false"></svg>
+        </div>
+        <div class="hero-copy">
+          <h1 id="hero-title" class="view-heading" tabindex="-1" data-i18n="hero_title">Türkiye'nin elektriği şu an ne kadar temiz?</h1>
+          <p class="hero-lead" data-i18n="hero_lead"></p>
+          <div class="hero-live">
+            <span class="hero-live-label" data-i18n="hero_live">Ulusal şebeke, son saat</span>
+            <p class="hero-live-value"><span id="hero-value">–</span> <span class="unit">gCO₂eq/kWh</span></p>
+            <p id="hero-status" class="status"></p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#/harita"><span data-i18n="btn_explore">Haritayı keşfet</span></a>
+            <a class="btn btn--ghost" href="#amac" id="btn-purpose"><span data-i18n="btn_purpose">Projenin amacı</span></a>
+          </div>
+        </div>
+      </div>
+
+      <section class="gauges" aria-labelledby="gauges-title">
+        <h2 id="gauges-title" class="section-title" data-reveal data-i18n="gauge_title">Şebekenin şu anki durumu</h2>
+        <dl class="gauge-strip" data-reveal>
+          <div class="gauge gauge--main">
+            <dt data-i18n="now_title">Ulusal yoğunluk</dt>
+            <dd>
+              <span class="gauge-value"><span id="now-value">–</span> <span class="unit">gCO₂eq/kWh</span></span>
+              <span id="now-status" class="status"></span>
+              <span class="meter" aria-hidden="true"><span id="now-meter-fill" class="meter-fill"></span></span>
+            </dd>
+          </div>
+          <div class="gauge">
+            <dt data-i18n="renewable">Yenilenebilir payı</dt>
+            <dd><span class="gauge-value" id="now-renewable">–</span></dd>
+          </div>
+          <div class="gauge">
+            <dt data-i18n="cleanest_24">Son 24 saatin en temiz saati</dt>
+            <dd><span class="gauge-value gauge-value--sm" id="now-cleanest">–</span></dd>
+          </div>
+          <div class="gauge">
+            <dt data-i18n="dirtiest_24">Son 24 saatin en kirli saati</dt>
+            <dd><span class="gauge-value gauge-value--sm" id="now-dirtiest">–</span></dd>
+          </div>
+          <div class="gauge">
+            <dt data-i18n="updated">Son veri saati</dt>
+            <dd><span class="gauge-value gauge-value--sm" id="now-updated">–</span></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="cop" aria-labelledby="cop-title" data-reveal>
+        <div class="cop-head">
+          <h2 id="cop-title" data-i18n="cop_title">COP31, Antalya</h2>
+          <p class="cop-dates" data-i18n="cop_sub">9–20 Kasım 2026</p>
+        </div>
+        <div id="cop-countdown" class="cop-countdown" hidden>
+          <p class="cop-lead" data-i18n="countdown_lead"></p>
+          <p class="cop-clock">
+            <span id="cd-days" class="cop-num">–</span> <span class="unit" data-i18n="days"></span>
+            <span id="cd-hours" class="cop-num">–</span> <span class="unit" data-i18n="hours"></span>
+          </p>
+          <p class="cop-note" data-i18n="countdown_note"></p>
+        </div>
+        <dl id="cop-summary" class="cop-summary" hidden>
+          <div><dt data-i18n="cop_avg"></dt><dd id="cop-avg"></dd></div>
+          <div><dt data-i18n="cop_ren"></dt><dd id="cop-ren"></dd></div>
+          <div><dt data-i18n="cop_clean"></dt><dd id="cop-clean"></dd></div>
+          <div><dt data-i18n="cop_dirty"></dt><dd id="cop-dirty"></dd></div>
+          <div><dt data-i18n="cop_hours"></dt><dd id="cop-hours"></dd></div>
+        </dl>
+      </section>
+
+      <section id="amac" class="purpose" aria-labelledby="purpose-title" tabindex="-1">
+        <h2 id="purpose-title" class="section-title" data-reveal data-i18n="purpose_title">Projenin amacı</h2>
+        <div class="purpose-cols">
+          <article data-reveal>
+            <h3 data-i18n="purpose_measure_t"></h3>
+            <p data-i18n="purpose_measure"></p>
+          </article>
+          <article data-reveal>
+            <h3 data-i18n="purpose_why_t"></h3>
+            <p data-i18n="purpose_why"></p>
+          </article>
+          <article data-reveal>
+            <h3 data-i18n="purpose_not_t"></h3>
+            <p data-i18n="purpose_not"></p>
+          </article>
+        </div>
+        <p class="purpose-link" data-reveal><a href="#/yontem" data-i18n="purpose_link">Yöntemi incele</a></p>
+      </section>
+    </section>
+
+    <!-- ============ HARİTA ============ -->
+    <section class="view view--map" data-view="/harita" aria-labelledby="map-title" hidden>
+      <h1 id="map-title" class="sr-only view-heading" tabindex="-1" data-i18n="map_title">81 il üretim profili haritası</h1>
+
+      <div class="map-toolbar" role="toolbar" aria-labelledby="map-title">
+        <div class="segmented" role="group" data-i18n-aria="mode_label">
+          <button type="button" id="mode-intensity" class="seg-btn" aria-pressed="true" data-i18n="mode_intensity">Karbon yoğunluğu</button>
+          <button type="button" id="mode-source" class="seg-btn" aria-pressed="false" data-i18n="mode_source">Baskın kaynak</button>
+        </div>
+        <label class="field">
+          <span data-i18n="select_city_label">İl</span>
+          <select id="city-select" class="select"></select>
+        </label>
+        <div class="hour-control">
+          <button type="button" id="play-btn" class="play-btn" aria-pressed="false">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+              <path id="icon-play" d="M2 1.2v9.6L10.5 6 2 1.2z"/>
+              <path id="icon-pause" d="M2 1.5h3v9H2zM7 1.5h3v9H7z" visibility="hidden"/>
+            </svg>
+            <span id="play-label" data-i18n="play">Oynat</span>
+          </button>
+          <label class="sr-only" for="hour-slider" data-i18n="hour_label">Saat</label>
+          <input type="range" id="hour-slider" min="0" max="23" value="23">
+          <output id="hour-output" for="hour-slider" class="hour-output">–</output>
+        </div>
+        <div class="legend-wrap">
+          <button type="button" id="legend-btn" class="legend-btn" aria-expanded="false" aria-controls="legend-pop" data-i18n="legend_btn">Lejant</button>
+          <div id="legend-pop" class="legend-pop" hidden>
+            <div id="legend-intensity">
+              <p class="legend-title" data-i18n="legend_intensity_t"></p>
+              <div class="legend-bar" aria-hidden="true"></div>
+              <div class="legend-scale"><span id="legend-low">150</span><span id="legend-mid">450</span><span id="legend-high">700+</span></div>
+            </div>
+            <div id="legend-source" hidden>
+              <p class="legend-title" data-i18n="legend_source_t"></p>
+              <ul id="legend-source-list" class="legend-sources"></ul>
+            </div>
+            <p class="legend-note" data-i18n="legend_note"></p>
+            <a href="#/rehber" class="legend-more" data-i18n="legend_more">Rehberin tamamı</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-stage">
+        <div id="map-viewport" class="map-viewport">
+          <svg id="tr-map" class="tr-map" viewBox="0 0 1000 460" role="group" aria-labelledby="map-title"></svg>
+          <div id="map-tooltip" class="map-tooltip" hidden aria-hidden="true">
+            <p class="tt-head"><span id="tt-plate" class="plate"></span><strong id="tt-name"></strong></p>
+            <p class="tt-value"><span id="tt-intensity"></span> <span class="unit">gCO₂eq/kWh</span></p>
+            <p class="tt-meta"><span id="tt-status" class="status"></span><span id="tt-ren" class="tt-ren"></span></p>
+            <ul id="tt-mix" class="tt-mix"></ul>
+          </div>
+          <p id="map-wheel-hint" class="map-wheel-hint" aria-hidden="true" hidden></p>
+          <div class="zoom-controls" role="group">
+            <button type="button" id="zoom-in-btn" class="zoom-btn" data-i18n-aria="zoom_in">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 2v10M2 7h10"/></svg>
+            </button>
+            <button type="button" id="zoom-out-btn" class="zoom-btn" data-i18n-aria="zoom_out">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2 7h10"/></svg>
+            </button>
+            <button type="button" id="reset-zoom-btn" class="zoom-btn" data-i18n-aria="zoom_reset">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5V2h3M12 5V2H9M2 9v3h3M12 9v3H9"/></svg>
+            </button>
+          </div>
+        </div>
+        <p class="stage-hint" data-i18n="stage_hint"></p>
+      </div>
+
+      <aside id="province-panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panel-name" hidden>
+        <div class="panel-head">
+          <span id="panel-plate" class="plate plate--lg"></span>
+          <div class="panel-titles">
+            <h2 id="panel-name" tabindex="-1"></h2>
+            <span id="panel-cop" class="cop-badge" hidden data-i18n="cop_host_badge"></span>
+          </div>
+          <button type="button" id="panel-close" class="panel-close" data-i18n-aria="panel_close">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8"/></svg>
+          </button>
+        </div>
+        <div class="panel-body">
+          <section class="panel-now">
+            <p id="panel-hour" class="panel-hour"></p>
+            <p class="panel-value"><span id="panel-intensity"></span> <span class="unit">gCO₂eq/kWh</span></p>
+            <p id="panel-status" class="status"></p>
+            <p id="panel-compare" class="panel-compare"></p>
+            <dl class="panel-facts">
+              <div><dt data-i18n="renewable"></dt><dd id="panel-renewable"></dd></div>
+              <div><dt data-i18n="dominant_source"></dt><dd id="panel-dominant"></dd></div>
+            </dl>
+          </section>
+          <section class="panel-block" aria-labelledby="panel-plants-title">
+            <h3 id="panel-plants-title" data-i18n="panel_plants_t"></h3>
+            <ul id="panel-plants" class="plant-list"></ul>
+            <p id="panel-plants-total" class="plant-total"></p>
+            <p id="panel-plants-empty" class="empty-state" hidden data-i18n="plants_empty"></p>
+            <p class="plant-source" data-i18n="plants_source"></p>
+          </section>
+          <section class="panel-block">
+            <h3 data-i18n="panel_day_t"></h3>
+            <div class="chart-box chart-box--panel"><canvas id="panel-day-chart" role="img"></canvas></div>
+          </section>
+          <section class="panel-block">
+            <h3><span data-i18n="panel_history_t"></span> <span id="panel-history-sample" class="sample-pill" hidden data-i18n="sample_short"></span></h3>
+            <div id="panel-history-box" class="chart-box chart-box--panel"><canvas id="panel-history-chart" role="img"></canvas></div>
+            <p id="panel-history-empty" class="empty-state" hidden data-i18n="history_empty"></p>
+          </section>
+          <section class="panel-block">
+            <h3 data-i18n="panel_capacity_t"></h3>
+            <div class="capacity">
+              <div class="chart-box chart-box--donut"><canvas id="panel-capacity-chart" role="img"></canvas></div>
+              <ul id="panel-capacity-list" class="mix-list"></ul>
+            </div>
+          </section>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ============ HARİTA REHBERİ ============ -->
+    <section class="view view--page" data-view="/rehber" aria-labelledby="guide-title" hidden>
+      <div class="page-head">
+        <h1 id="guide-title" class="view-heading" tabindex="-1" data-i18n="guide_title">Harita rehberi</h1>
+        <p class="page-lead" data-i18n="guide_lead"></p>
+      </div>
+      <section class="guide-block" aria-labelledby="g-scale">
+        <h2 id="g-scale" data-i18n="guide_scale_t"></h2>
+        <div class="guide-scale">
+          <div class="legend-bar legend-bar--lg" aria-hidden="true"></div>
+          <div class="guide-scale-marks"><span id="g-low">150</span><span id="g-clean"></span><span id="g-dirty"></span><span id="g-high">700+</span></div>
+        </div>
+        <p id="g-scale-text"></p>
+        <ul class="status-samples">
+          <li><span class="status clean" id="g-st-clean"></span></li>
+          <li><span class="status medium" id="g-st-medium"></span></li>
+          <li><span class="status dirty" id="g-st-dirty"></span></li>
+        </ul>
+      </section>
+      <section class="guide-block" aria-labelledby="g-sources">
+        <h2 id="g-sources" data-i18n="guide_sources_t"></h2>
+        <p data-i18n="guide_sources"></p>
+        <ul id="guide-source-list" class="source-chips"></ul>
+      </section>
+      <section class="guide-block" aria-labelledby="g-model">
+        <h2 id="g-model" data-i18n="guide_model_t"></h2>
+        <ol class="model-steps">
+          <li><h3 data-i18n="guide_step1_t"></h3><p data-i18n="guide_step1"></p></li>
+          <li><h3 data-i18n="guide_step2_t"></h3><p data-i18n="guide_step2"></p></li>
+          <li><h3 data-i18n="guide_step3_t"></h3><p data-i18n="guide_step3"></p></li>
+        </ol>
+        <p class="footnote" data-i18n="method_b5"></p>
+      </section>
+      <section class="guide-block" aria-labelledby="g-use">
+        <h2 id="g-use" data-i18n="guide_use_t"></h2>
+        <ul id="guide-use-list" class="use-list"></ul>
+        <p><a href="#/harita" class="btn btn--primary"><span data-i18n="btn_explore">Haritayı keşfet</span></a></p>
+      </section>
+    </section>
+
+    <!-- ============ VERİLER ============ -->
+    <section class="view view--page" data-view="/veriler" aria-labelledby="data-title" hidden>
+      <div class="page-head">
+        <h1 id="data-title" class="view-heading" tabindex="-1" data-i18n="data_title">Veriler</h1>
+        <p class="page-lead" data-i18n="data_lead"></p>
+      </div>
+      <section class="chart-section" aria-labelledby="day-title">
+        <h2 id="day-title" data-i18n="day_title"></h2>
+        <div class="chart-box chart-box--wide"><canvas id="day-chart" role="img"></canvas></div>
+      </section>
+      <section class="chart-section" aria-labelledby="year-title">
+        <h2 id="year-title" data-i18n="year_title"></h2>
+        <div class="chart-box chart-box--wide"><canvas id="year-chart" role="img"></canvas></div>
+      </section>
+    </section>
+
+    <!-- ============ YÖNTEM ============ -->
+    <section class="view view--page" data-view="/yontem" aria-labelledby="method-title" hidden>
+      <div class="page-head">
+        <h1 id="method-title" class="view-heading" tabindex="-1" data-i18n="method_title">Yöntem ve kapsam sınırları</h1>
+        <p class="page-lead" data-i18n="method_intro"></p>
+      </div>
+      <ul class="method-list">
+        <li data-i18n="method_b1"></li>
+        <li data-i18n="method_b2"></li>
+        <li data-i18n="method_b3"></li>
+        <li data-i18n="method_b4"></li>
+        <li data-i18n="method_b5"></li>
+      </ul>
+      <h2 data-i18n="factors_summary"></h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="th_source">Kaynak</th>
+              <th scope="col" data-i18n="th_factor">Katsayı (gCO₂eq/kWh)</th>
+              <th scope="col" data-i18n="th_ref">Referans ve not</th>
+            </tr>
+          </thead>
+          <tbody id="factor-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="disclaimer"></p>
+    <p class="footer-sub" data-i18n="footer_license"></p>
+  </footer>
+</body>
+</html>

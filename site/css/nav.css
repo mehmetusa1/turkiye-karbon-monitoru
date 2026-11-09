@@ -1,0 +1,149 @@
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s, border-color 0.3s, backdrop-filter 0.3s;
+}
+.site-nav.is-scrolled,
+body:not(:has(.view--home:not([hidden]))) .site-nav {
+  background: var(--glass);
+  backdrop-filter: saturate(160%) blur(18px);
+  border-bottom-color: var(--line);
+}
+
+/* Giriş bittiğinde menü yukarıdan süzülerek yerine oturur */
+.site-nav.nav--landing { animation: nav-land 0.7s var(--ease-land) backwards; }
+@keyframes nav-land {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.nav-inner {
+  max-width: var(--page-max);
+  height: var(--nav-h);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.live-dot {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--text);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--text) 60%, transparent);
+  animation: live-pulse 2.4s ease-out infinite;
+}
+@keyframes live-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--text) 55%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 10px transparent; }
+}
+
+.nav-links {
+  display: flex;
+  gap: 2px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.nav-links a {
+  position: relative;
+  display: block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  transition: color 0.2s, background-color 0.2s;
+}
+.nav-links a:hover { color: var(--text); background: var(--hover); }
+.nav-links a[aria-current="page"] { color: var(--text); }
+.nav-links a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 14px; right: 14px; bottom: 3px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+}
+
+.nav-right { display: flex; align-items: center; gap: var(--space-3); }
+
+.lang-btn {
+  min-width: 44px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.lang-btn:hover { border-color: var(--text); }
+
+.nav-toggle {
+  display: none;
+  width: 42px; height: 42px;
+  border: 0;
+  background: transparent;
+  border-radius: var(--radius-sm);
+}
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  display: block;
+  width: 20px; height: 2px;
+  margin: 0 auto;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.25s var(--ease-out), opacity 0.2s;
+}
+.nav-toggle-bars { position: relative; }
+.nav-toggle-bars::before, .nav-toggle-bars::after { content: ""; position: absolute; left: 0; }
+.nav-toggle-bars::before { top: -6px; }
+.nav-toggle-bars::after { top: 6px; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after { transform: translateY(-6px) rotate(-45deg); }
+
+@media (max-width: 860px) {
+  .nav-inner { gap: var(--space-3); }
+  .nav-toggle { display: block; order: -1; }
+  .brand { margin-right: auto; }
+  .nav-links {
+    position: absolute;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: var(--space-2) 12px var(--space-4);
+    background: var(--glass);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--line);
+    transform: translateY(-8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.25s var(--ease-out), opacity 0.2s, visibility 0.2s;
+  }
+  .nav-links.is-open { transform: none; opacity: 1; visibility: visible; }
+  .nav-links a { padding: 12px 14px; font-size: var(--fs-md); border-radius: var(--radius-sm); }
+  .nav-links a[aria-current="page"]::after { left: 14px; right: auto; width: 24px; bottom: 6px; }
+}

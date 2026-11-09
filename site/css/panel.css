@@ -1,0 +1,143 @@
+/* ===== İl yan paneli ===== */
+.panel {
+  position: fixed;
+  /* --header-h: menü + bilgi bantlarının gerçek yüksekliği (main.js ölçer) */
+  top: calc(var(--header-h, var(--nav-h)) + 8px);
+  right: 8px;
+  bottom: 8px;
+  z-index: 90;
+  width: min(430px, calc(100vw - 16px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-panel);
+  transform: translateX(calc(100% + 16px));
+  transition: transform 0.45s var(--ease-land);
+}
+.panel.is-open { transform: none; }
+
+.panel-head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-4) var(--space-3) var(--space-5);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.plate--lg { font-size: var(--fs-sm); min-width: 2.6em; padding: 3px 8px; }
+.panel-titles { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.panel-titles h2 { font-size: var(--fs-xl); }
+.panel-titles h2:focus { outline: none; }
+.cop-badge {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--night);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+.panel-close {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: transparent;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.panel-close:hover { border-color: var(--text); background: var(--hover); }
+
+.panel-body { padding: var(--space-4) var(--space-5) var(--space-6); display: grid; gap: var(--space-6); }
+
+.panel-now { display: grid; gap: 4px; }
+.panel-hour { font-size: var(--fs-xs); color: var(--muted); }
+.panel-value {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.panel-value .unit { font-size: 0.4em; }
+.panel-compare { font-size: var(--fs-sm); color: var(--muted); }
+.panel-facts {
+  margin: var(--space-3) 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+}
+.panel-facts > div { padding-top: var(--space-3); }
+.panel-facts > div + div { padding-left: var(--space-4); border-left: 1px solid var(--line); }
+.panel-facts dt { font-size: var(--fs-xs); color: var(--muted); }
+.panel-facts dd { margin: 2px 0 0; font-family: var(--font-display); font-weight: 600; font-size: var(--fs-lg); }
+
+.panel-block { display: grid; gap: var(--space-3); }
+.panel-block h3 {
+  font-size: var(--fs-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.chart-box--panel { height: 250px; }
+.capacity { display: grid; grid-template-columns: 150px 1fr; gap: var(--space-4); align-items: center; }
+.chart-box--donut { height: 150px; }
+.mix-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: var(--fs-sm); }
+.mix-list strong { margin-left: auto; font-variant-numeric: tabular-nums; }
+
+@media (max-width: 760px) {
+  .panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 78vh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    transform: translateY(100%);
+  }
+  .panel-head::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    margin-left: -20px;
+    border-radius: 4px;
+    background: var(--line-strong);
+  }
+  .capacity { grid-template-columns: 120px 1fr; }
+  .chart-box--donut { height: 120px; }
+}
+
+/* --- Büyük santraller --- */
+.plant-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.plant-list li {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.plant-list li:first-child { border-top: 1px solid var(--line); }
+.plant-text { display: grid; min-width: 0; }
+.plant-text strong { font-weight: 600; overflow-wrap: anywhere; }
+.plant-type { font-size: var(--fs-xs); color: var(--muted); }
+.plant-mw {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.plant-total { font-size: var(--fs-sm); color: var(--muted); }
+.plant-total:empty { display: none; }
+.plant-source { font-size: var(--fs-xs); color: var(--muted); }

@@ -1,0 +1,111 @@
+/* ===== Fontlar (yerel, OFL) ===== */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../fonts/space-grotesk-latin-wght-normal.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../fonts/space-grotesk-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-ext-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* ===== Renk: siyah-beyaz arayüz =====
+   Arayüz yalnızca siyah, beyaz ve nötr grilerden oluşur. Renk yalnızca veride kalır
+   (harita, grafikler, kaynak noktaları, durum etiketleri).
+   Koyu: #000 zemin · #0c0c0c / #161616 yüzey · #fafafa metin · #a3a3a3 ikincil (~8:1)
+   Açık: #fff zemin · #f5f5f5 / #ebebeb yüzey · #0a0a0a metin · #525252 ikincil (~7.8:1) */
+:root {
+  --night: #000000;
+  --night-deep: #000000;
+  --surface: #0c0c0c;
+  --surface-2: #161616;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.26);
+  --text: #fafafa;
+  --muted: #a3a3a3;
+  --hover: rgba(255, 255, 255, 0.07);
+  /* Eski vurgu adları: artık tek renkli (metin rengi) */
+  --amber: var(--text);
+  --cyan: var(--text);
+  /* Durum renkleri veri taşır, renkli kalır */
+  --clean: #4ade80;
+  --medium: #facc15;
+  --dirty: #f87171;
+  --glass: rgba(0, 0, 0, 0.78);
+  --map-sea: #050505;
+  --map-stroke: rgba(0, 0, 0, 0.85);
+  --shadow-panel: 0 24px 60px rgba(0, 0, 0, 0.6);
+  --grid: rgba(255, 255, 255, 0.08);
+
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Tip ölçeği (1.25 oran) */
+  --fs-xs: 0.8rem;
+  --fs-sm: 0.9rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.56rem;
+  --fs-2xl: 1.95rem;
+  --fs-3xl: clamp(2.3rem, 1.4rem + 3.6vw, 4.4rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 5rem;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 22px;
+  --page-max: 1180px;
+  --nav-h: 64px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-land: cubic-bezier(0.16, 0.84, 0.3, 1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Açık tema: beyaz zemin, siyah metin */
+    --night: #ffffff;
+    --night-deep: #ffffff;
+    --surface: #f5f5f5;
+    --surface-2: #ebebeb;
+    --line: rgba(0, 0, 0, 0.12);
+    --line-strong: rgba(0, 0, 0, 0.26);
+    --text: #0a0a0a;
+    --muted: #525252;
+    --hover: rgba(0, 0, 0, 0.06);
+    --clean: #15803d;
+    --medium: #a16207;
+    --dirty: #b91c1c;
+    --glass: rgba(255, 255, 255, 0.85);
+    --map-sea: #f2f2f2;
+    --map-stroke: rgba(255, 255, 255, 0.95);
+    --shadow-panel: 0 24px 60px rgba(0, 0, 0, 0.14);
+    --grid: rgba(0, 0, 0, 0.08);
+  }
+}

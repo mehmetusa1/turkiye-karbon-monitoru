@@ -1,0 +1,124 @@
+/* ===== Rehber, Veriler, Yöntem sayfaları ===== */
+.view--page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: var(--space-7) 20px var(--space-8);
+  display: grid;
+  gap: var(--space-7);
+}
+.page-head { display: grid; gap: var(--space-3); max-width: 70ch; }
+.page-head h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3.2rem); font-weight: 600; letter-spacing: -0.03em; }
+.page-lead { font-size: var(--fs-lg); color: var(--muted); }
+
+/* --- Rehber --- */
+.guide-block {
+  display: grid;
+  gap: var(--space-4);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+}
+.guide-block > p { max-width: 70ch; color: var(--muted); }
+.guide-block h2 { font-size: var(--fs-xl); }
+
+.guide-scale { max-width: 720px; }
+.legend-bar--lg { height: 16px; border-radius: 8px; }
+.guide-scale-marks {
+  position: relative;
+  height: 1.5em;
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.guide-scale-marks span { position: absolute; top: 0; transform: translateX(-50%); }
+/* Ölçek 150–700+: eşik konumları ~%27 (300) ve ~%55 (450) */
+#g-low { left: 0; transform: none; }
+#g-clean { left: 27%; }
+#g-dirty { left: 55%; }
+#g-high { right: 0; left: auto; transform: none; }
+
+.status-samples { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); }
+
+.source-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-2) var(--space-5);
+}
+.source-chip {
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.swatch { width: 14px; height: 14px; border-radius: 4px; }
+.chip-name { font-weight: 600; }
+.chip-val { font-size: var(--fs-sm); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Model adımları gerçek bir sıra olduğu için numaralı */
+.model-steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+.model-steps li {
+  counter-increment: step;
+  position: relative;
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+  padding: var(--space-4) var(--space-4) var(--space-4) 0;
+}
+.model-steps li::before {
+  content: counter(step);
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+  color: var(--amber);
+  line-height: 1;
+}
+.model-steps li + li { padding-left: var(--space-5); border-left: 1px solid var(--line); }
+.model-steps h3 { font-size: var(--fs-md); }
+.model-steps p { color: var(--muted); font-size: var(--fs-sm); }
+.footnote { font-size: var(--fs-sm); }
+
+.use-list { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-2); max-width: 70ch; }
+.use-list li::marker { color: var(--amber); }
+
+/* --- Veriler --- */
+.chart-section { display: grid; gap: var(--space-4); }
+.chart-section h2 { font-size: var(--fs-xl); }
+.chart-box--wide {
+  height: 380px;
+  padding: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+/* --- Yöntem --- */
+.method-list { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-3); max-width: 75ch; }
+.method-list li::marker { color: var(--amber); }
+.view--page > h2 { font-size: var(--fs-xl); margin-bottom: calc(-1 * var(--space-5)); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-md); }
+table { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+th, td { padding: 12px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; background: var(--surface); }
+td:nth-child(2) { font-family: var(--font-display); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td:nth-child(3) { color: var(--muted); }
+tbody tr:last-child td { border-bottom: 0; }
+
+@media (max-width: 760px) {
+  .view--page { padding-top: var(--space-6); gap: var(--space-6); }
+  .model-steps { grid-template-columns: 1fr; }
+  .model-steps li + li { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .chart-box--wide { height: 300px; padding: var(--space-2); }
+}
