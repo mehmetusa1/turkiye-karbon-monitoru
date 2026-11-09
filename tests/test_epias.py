@@ -173,3 +173,25 @@ def test_province_history_keeps_last_12_months(tmp_path):
     update_site_data(hours, tmp_path, attempted_at="x")
     months = _history(tmp_path)["provinces"]["Antalya"]["months"]
     assert len(months) == 12 and months[0]["month"] == "2025-03" and months[-1]["month"] == "2026-02"
+
+
+def test_fetch_derived_hours_asks_client_to_retry_timeouts():
+    """EPİAŞ yavaş yanıt verdiğinde tek bir zaman aşımı tüm güncellemeyi düşürmesin."""
+    from datetime import date
+
+    from karbon.epias import fetch_derived_hours
+
+    calls = []
+
+    class FakeClient:
+        def call(self, key, **kwargs):
+            calls.append(kwargs)
+            return []
+
+    fetch_derived_hours(date(2026, 11, 1), date(2026, 11, 9), client=FakeClient())
+
+    assert calls, "en az bir istek yapılmalı"
+    for kw in calls:
+        assert kw["retry_attempts"] >= 3
+        assert kw["retry_backoff"] > 0
+        assert kw["request_kwargs"]["timeout"] >= 60

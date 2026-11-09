@@ -15,6 +15,11 @@ import os
 
 from karbon.publish import derive_hour
 
+# Her istek için zaman aşımı (sn) ve zaman aşımında yeniden deneme bütçesi
+FETCH_TIMEOUT_S = 90.0
+FETCH_RETRY_ATTEMPTS = 4
+FETCH_RETRY_BACKOFF_S = 5.0
+
 # EPİAŞ realtime-generation JSON alan adları -> karbon.factors anahtarları
 EPIAS_FIELD_MAP: dict[str, str] = {
     "lignite": "lignite",
@@ -123,6 +128,13 @@ def fetch_derived_hours(
             "rt-gen",
             start_date=cur.isoformat(),
             end_date=chunk_end.isoformat(),
+            # EPİAŞ yurt dışındaki GitHub sunucularına zaman zaman yavaş yanıt veriyor.
+            # eptr2 varsayılan olarak hiç yeniden denemediği için tek bir
+            # ReadTimeoutError tüm saatlik güncellemeyi düşürüyordu.
+            request_kwargs={"timeout": FETCH_TIMEOUT_S},
+            retry_attempts=FETCH_RETRY_ATTEMPTS,
+            retry_backoff=FETCH_RETRY_BACKOFF_S,
+            retry_backoff_max=30.0,
         )
         all_rows.extend(_extract_rows(res))
         cur = chunk_end + timedelta(days=1)
