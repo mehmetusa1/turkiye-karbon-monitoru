@@ -1,0 +1,58 @@
+name: Siteyi Yayınla (GitHub Pages)
+
+on:
+  # Site dosyaları değişince
+  push:
+    branches: [main]
+    paths: ["site/**"]
+  # Saatlik veri güncellemesi bitince. Bot'un GITHUB_TOKEN ile attığı commit
+  # "push" tetiklemesi oluşturmaz; bu yüzden güncelleme iş akışının bitişini dinliyoruz.
+  workflow_run:
+    workflows: ["Saatlik Veri Güncelleme"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+# Yalnızca yayın için gereken en düşük yetkiler
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Aynı anda tek yayın; sıradaki yayın yarıda kesilmesin
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    # Veri güncellemesi başarısız olduysa yeniden yayınlamaya gerek yok
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Depoyu indir
+        # v4.2.2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          # workflow_run'da da bot'un son veri commit'ini al
+          ref: main
+          persist-credentials: false
+
+      - name: Pages ayarla
+        # v6.0.0
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
+
+      - name: Yalnızca site/ klasörünü paketle
+        # v5.0.0
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
+        with:
+          path: site
+
+      - name: Yayınla
+        id: deployment
+        # v5.0.1
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346

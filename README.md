@@ -6,6 +6,8 @@ Her saat, elektriğin hangi kaynaklardan (kömür, doğalgaz, baraj, rüzgâr, g
 
 Antalya'daki **COP31 İklim Zirvesi (9–20 Kasım 2026)** için geliştirilmiştir.
 
+**🔗 Siteyi aç: https://mehmetusa1.github.io/turkiye-karbon-monitoru/**
+
 ---
 
 ## Sitede neler var
