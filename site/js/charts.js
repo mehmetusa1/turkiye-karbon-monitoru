@@ -33,7 +33,7 @@ function baseOptions(extra = {}) {
     font: { family: "Manrope, system-ui, sans-serif" },
     plugins: {
       legend: { labels: { color: c.text, boxWidth: 10, boxHeight: 10, usePointStyle: true, pointStyle: "rectRounded" } },
-      tooltip: { titleFont: { family: "Manrope, system-ui" }, bodyFont: { family: "Manrope, system-ui" } },
+      tooltip: { titleFont: { family: "Fraunces, Georgia, serif" }, bodyFont: { family: "Manrope, system-ui" } },
     },
     ...extra,
   };
