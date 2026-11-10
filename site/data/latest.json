@@ -1,61 +1,16 @@
 {
  "is_sample": false,
  "last_fetch_failed": false,
- "updated": "2026-11-09T22:00:00+03:00",
- "last_attempt": "2026-11-09T23:39:00+03:00",
+ "updated": "2026-11-10T01:00:00+03:00",
+ "last_attempt": "2026-11-10T03:17:36+03:00",
  "thresholds": {
   "clean_below": 300,
   "dirty_from": 450
  },
  "hours": [
   {
-   "time": "2026-11-08T23:00:00+03:00",
-   "intensity": 402.4,
-   "renewable_share": 0.509,
-   "mix_pct": {
-    "coal": 37.0,
-    "gas": 11.6,
-    "hydro": 35.7,
-    "wind": 9.1,
-    "solar": 0.0,
-    "geothermal": 3.7,
-    "biomass": 2.4,
-    "other": 0.5
-   }
-  },
-  {
-   "time": "2026-11-09T00:00:00+03:00",
-   "intensity": 417.7,
-   "renewable_share": 0.484,
-   "mix_pct": {
-    "coal": 37.9,
-    "gas": 13.1,
-    "hydro": 33.5,
-    "wind": 8.6,
-    "solar": 0.0,
-    "geothermal": 3.9,
-    "biomass": 2.4,
-    "other": 0.5
-   }
-  },
-  {
-   "time": "2026-11-09T01:00:00+03:00",
-   "intensity": 431.4,
-   "renewable_share": 0.475,
-   "mix_pct": {
-    "coal": 40.2,
-    "gas": 11.8,
-    "hydro": 33.0,
-    "wind": 7.9,
-    "solar": 0.0,
-    "geothermal": 4.1,
-    "biomass": 2.5,
-    "other": 0.6
-   }
-  },
-  {
    "time": "2026-11-09T02:00:00+03:00",
-   "intensity": 442.1,
+   "intensity": 441.9,
    "renewable_share": 0.471,
    "mix_pct": {
     "coal": 42.3,
@@ -70,8 +25,8 @@
   },
   {
    "time": "2026-11-09T03:00:00+03:00",
-   "intensity": 440.3,
-   "renewable_share": 0.472,
+   "intensity": 440.1,
+   "renewable_share": 0.473,
    "mix_pct": {
     "coal": 41.8,
     "gas": 10.4,
@@ -85,7 +40,7 @@
   },
   {
    "time": "2026-11-09T04:00:00+03:00",
-   "intensity": 439.6,
+   "intensity": 439.4,
    "renewable_share": 0.471,
    "mix_pct": {
     "coal": 41.6,
@@ -100,7 +55,7 @@
   },
   {
    "time": "2026-11-09T05:00:00+03:00",
-   "intensity": 439.2,
+   "intensity": 439.0,
    "renewable_share": 0.468,
    "mix_pct": {
     "coal": 41.1,
@@ -115,7 +70,7 @@
   },
   {
    "time": "2026-11-09T06:00:00+03:00",
-   "intensity": 438.3,
+   "intensity": 438.1,
    "renewable_share": 0.46,
    "mix_pct": {
     "coal": 40.1,
@@ -124,13 +79,13 @@
     "wind": 7.1,
     "solar": 0.0,
     "geothermal": 4.1,
-    "biomass": 2.5,
+    "biomass": 2.6,
     "other": 0.6
    }
   },
   {
    "time": "2026-11-09T07:00:00+03:00",
-   "intensity": 428.8,
+   "intensity": 428.5,
    "renewable_share": 0.466,
    "mix_pct": {
     "coal": 38.5,
@@ -139,50 +94,50 @@
     "wind": 6.3,
     "solar": 0.7,
     "geothermal": 3.9,
-    "biomass": 2.3,
+    "biomass": 2.4,
     "other": 0.5
    }
   },
   {
    "time": "2026-11-09T08:00:00+03:00",
-   "intensity": 405.1,
-   "renewable_share": 0.491,
+   "intensity": 404.6,
+   "renewable_share": 0.492,
    "mix_pct": {
-    "coal": 35.4,
+    "coal": 35.3,
     "gas": 15.0,
     "hydro": 33.6,
-    "wind": 5.5,
+    "wind": 5.6,
     "solar": 4.3,
     "geothermal": 3.5,
-    "biomass": 2.1,
-    "other": 0.5
-   }
-  },
-  {
-   "time": "2026-11-09T09:00:00+03:00",
-   "intensity": 418.6,
-   "renewable_share": 0.472,
-   "mix_pct": {
-    "coal": 36.3,
-    "gas": 15.9,
-    "hydro": 27.3,
-    "wind": 5.4,
-    "solar": 8.6,
-    "geothermal": 3.7,
     "biomass": 2.2,
     "other": 0.5
    }
   },
   {
-   "time": "2026-11-09T10:00:00+03:00",
-   "intensity": 437.5,
-   "renewable_share": 0.43,
+   "time": "2026-11-09T09:00:00+03:00",
+   "intensity": 418.0,
+   "renewable_share": 0.473,
    "mix_pct": {
-    "coal": 35.5,
-    "gas": 21.0,
+    "coal": 36.2,
+    "gas": 15.9,
+    "hydro": 27.3,
+    "wind": 5.4,
+    "solar": 8.6,
+    "geothermal": 3.7,
+    "biomass": 2.3,
+    "other": 0.5
+   }
+  },
+  {
+   "time": "2026-11-09T10:00:00+03:00",
+   "intensity": 436.6,
+   "renewable_share": 0.432,
+   "mix_pct": {
+    "coal": 35.4,
+    "gas": 20.9,
     "hydro": 21.5,
     "wind": 5.0,
-    "solar": 10.3,
+    "solar": 10.4,
     "geothermal": 3.9,
     "biomass": 2.3,
     "other": 0.5
@@ -190,14 +145,14 @@
   },
   {
    "time": "2026-11-09T11:00:00+03:00",
-   "intensity": 452.7,
-   "renewable_share": 0.407,
+   "intensity": 451.4,
+   "renewable_share": 0.409,
    "mix_pct": {
-    "coal": 36.4,
-    "gas": 22.3,
-    "hydro": 18.8,
+    "coal": 36.3,
+    "gas": 22.2,
+    "hydro": 18.7,
     "wind": 4.6,
-    "solar": 10.8,
+    "solar": 11.0,
     "geothermal": 4.1,
     "biomass": 2.5,
     "other": 0.5
@@ -205,167 +160,212 @@
   },
   {
    "time": "2026-11-09T12:00:00+03:00",
-   "intensity": 470.1,
-   "renewable_share": 0.393,
+   "intensity": 468.7,
+   "renewable_share": 0.395,
    "mix_pct": {
-    "coal": 38.8,
-    "gas": 21.2,
-    "hydro": 16.7,
+    "coal": 38.7,
+    "gas": 21.1,
+    "hydro": 16.6,
     "wind": 4.2,
-    "solar": 11.3,
+    "solar": 11.5,
     "geothermal": 4.4,
+    "biomass": 2.8,
+    "other": 0.7
+   }
+  },
+  {
+   "time": "2026-11-09T13:00:00+03:00",
+   "intensity": 460.3,
+   "renewable_share": 0.406,
+   "mix_pct": {
+    "coal": 38.0,
+    "gas": 20.8,
+    "hydro": 18.3,
+    "wind": 3.9,
+    "solar": 11.5,
+    "geothermal": 4.2,
     "biomass": 2.7,
     "other": 0.6
    }
   },
   {
-   "time": "2026-11-09T13:00:00+03:00",
-   "intensity": 461.6,
-   "renewable_share": 0.404,
-   "mix_pct": {
-    "coal": 38.1,
-    "gas": 20.9,
-    "hydro": 18.4,
-    "wind": 3.9,
-    "solar": 11.3,
-    "geothermal": 4.2,
-    "biomass": 2.6,
-    "other": 0.6
-   }
-  },
-  {
    "time": "2026-11-09T14:00:00+03:00",
-   "intensity": 442.9,
-   "renewable_share": 0.418,
+   "intensity": 441.8,
+   "renewable_share": 0.42,
    "mix_pct": {
-    "coal": 35.3,
-    "gas": 22.3,
-    "hydro": 22.4,
+    "coal": 35.1,
+    "gas": 22.2,
+    "hydro": 22.3,
     "wind": 3.1,
-    "solar": 10.1,
+    "solar": 10.3,
     "geothermal": 3.9,
-    "biomass": 2.3,
+    "biomass": 2.4,
     "other": 0.6
    }
   },
   {
    "time": "2026-11-09T15:00:00+03:00",
-   "intensity": 416.6,
-   "renewable_share": 0.436,
+   "intensity": 420.5,
+   "renewable_share": 0.432,
    "mix_pct": {
-    "coal": 30.9,
-    "gas": 25.0,
-    "hydro": 27.4,
+    "coal": 31.6,
+    "gas": 24.7,
+    "hydro": 27.0,
     "wind": 2.8,
     "solar": 7.6,
     "geothermal": 3.5,
-    "biomass": 2.2,
+    "biomass": 2.3,
     "other": 0.5
    }
   },
   {
    "time": "2026-11-09T16:00:00+03:00",
-   "intensity": 402.9,
-   "renewable_share": 0.433,
+   "intensity": 409.2,
+   "renewable_share": 0.427,
    "mix_pct": {
-    "coal": 27.4,
-    "gas": 28.8,
-    "hydro": 33.3,
+    "coal": 28.6,
+    "gas": 28.3,
+    "hydro": 32.7,
     "wind": 2.5,
     "solar": 2.7,
     "geothermal": 3.0,
-    "biomass": 1.8,
+    "biomass": 1.9,
     "other": 0.5
    }
   },
   {
    "time": "2026-11-09T17:00:00+03:00",
-   "intensity": 389.9,
-   "renewable_share": 0.442,
+   "intensity": 401.3,
+   "renewable_share": 0.431,
    "mix_pct": {
-    "coal": 25.7,
-    "gas": 29.6,
-    "hydro": 37.0,
-    "wind": 2.6,
+    "coal": 27.7,
+    "gas": 28.8,
+    "hydro": 35.9,
+    "wind": 2.5,
     "solar": 0.2,
-    "geothermal": 2.7,
-    "biomass": 1.6,
+    "geothermal": 2.6,
+    "biomass": 1.7,
     "other": 0.4
    }
   },
   {
    "time": "2026-11-09T18:00:00+03:00",
-   "intensity": 390.2,
-   "renewable_share": 0.442,
+   "intensity": 401.6,
+   "renewable_share": 0.431,
    "mix_pct": {
-    "coal": 25.7,
-    "gas": 29.7,
-    "hydro": 36.4,
-    "wind": 3.4,
+    "coal": 27.7,
+    "gas": 28.8,
+    "hydro": 35.3,
+    "wind": 3.3,
     "solar": 0.1,
     "geothermal": 2.7,
-    "biomass": 1.6,
+    "biomass": 1.7,
     "other": 0.4
    }
   },
   {
    "time": "2026-11-09T19:00:00+03:00",
-   "intensity": 400.4,
-   "renewable_share": 0.43,
+   "intensity": 407.8,
+   "renewable_share": 0.425,
    "mix_pct": {
-    "coal": 26.8,
-    "gas": 29.8,
-    "hydro": 34.2,
-    "wind": 4.4,
+    "coal": 28.5,
+    "gas": 28.6,
+    "hydro": 33.8,
+    "wind": 4.2,
     "solar": 0.0,
     "geothermal": 2.8,
-    "biomass": 1.6,
+    "biomass": 1.8,
     "other": 0.4
    }
   },
   {
    "time": "2026-11-09T20:00:00+03:00",
-   "intensity": 405.8,
-   "renewable_share": 0.425,
+   "intensity": 413.7,
+   "renewable_share": 0.42,
    "mix_pct": {
-    "coal": 27.6,
-    "gas": 29.4,
-    "hydro": 33.7,
-    "wind": 4.3,
+    "coal": 29.3,
+    "gas": 28.3,
+    "hydro": 33.1,
+    "wind": 4.2,
     "solar": 0.0,
-    "geothermal": 2.9,
-    "biomass": 1.6,
+    "geothermal": 2.8,
+    "biomass": 1.8,
     "other": 0.4
    }
   },
   {
    "time": "2026-11-09T21:00:00+03:00",
-   "intensity": 406.8,
-   "renewable_share": 0.434,
+   "intensity": 414.4,
+   "renewable_share": 0.428,
    "mix_pct": {
-    "coal": 28.9,
-    "gas": 27.4,
-    "hydro": 33.2,
-    "wind": 5.5,
+    "coal": 30.5,
+    "gas": 26.3,
+    "hydro": 32.6,
+    "wind": 5.4,
     "solar": 0.0,
     "geothermal": 3.0,
-    "biomass": 1.6,
+    "biomass": 1.8,
     "other": 0.4
    }
   },
   {
    "time": "2026-11-09T22:00:00+03:00",
-   "intensity": 385.7,
-   "renewable_share": 0.468,
+   "intensity": 415.5,
+   "renewable_share": 0.438,
    "mix_pct": {
-    "coal": 27.4,
-    "gas": 25.4,
-    "hydro": 34.8,
-    "wind": 7.1,
+    "coal": 32.0,
+    "gas": 23.8,
+    "hydro": 32.2,
+    "wind": 6.6,
+    "solar": 0.0,
+    "geothermal": 3.1,
+    "biomass": 1.8,
+    "other": 0.4
+   }
+  },
+  {
+   "time": "2026-11-09T23:00:00+03:00",
+   "intensity": 414.2,
+   "renewable_share": 0.448,
+   "mix_pct": {
+    "coal": 33.2,
+    "gas": 21.6,
+    "hydro": 31.6,
+    "wind": 8.0,
+    "solar": 0.0,
+    "geothermal": 3.4,
+    "biomass": 1.8,
+    "other": 0.4
+   }
+  },
+  {
+   "time": "2026-11-10T00:00:00+03:00",
+   "intensity": 412.4,
+   "renewable_share": 0.449,
+   "mix_pct": {
+    "coal": 33.9,
+    "gas": 21.0,
+    "hydro": 30.8,
+    "wind": 9.2,
     "solar": 0.0,
     "geothermal": 3.3,
-    "biomass": 1.5,
-    "other": 0.4
+    "biomass": 1.7,
+    "other": 0.3
+   }
+  },
+  {
+   "time": "2026-11-10T01:00:00+03:00",
+   "intensity": 401.7,
+   "renewable_share": 0.469,
+   "mix_pct": {
+    "coal": 32.6,
+    "gas": 20.2,
+    "hydro": 30.7,
+    "wind": 10.8,
+    "solar": 0.0,
+    "geothermal": 3.6,
+    "biomass": 1.7,
+    "other": 0.3
    }
   }
  ]
