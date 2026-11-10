@@ -2,8 +2,9 @@ name: Saatlik Veri Güncelleme
 
 on:
   schedule:
-    # Her saat başı 17. dakikada çalışır (EPİAŞ saatlik verisinin yayınlanmasını bekler)
-    - cron: "17 * * * *"
+    # Saatte üç deneme (7, 27, 47. dakika). GitHub zamanlanmış çalışmaları garanti etmez,
+    # sık sık atlar; tek deneme yerine üç deneme verinin saatlerce eskimesini önler.
+    - cron: "7,27,47 * * * *"
   workflow_dispatch:
     inputs:
       backfill_year:
