@@ -3,12 +3,12 @@
  "start": "2026-11-09T00:00:00+03:00",
  "end": "2026-11-21T00:00:00+03:00",
  "summary": {
-  "hours_counted": 47,
-  "avg_intensity": 432.8,
-  "avg_renewable_share": 0.426,
+  "hours_counted": 52,
+  "avg_intensity": 427.0,
+  "avg_renewable_share": 0.435,
   "cleanest": {
-   "time": "2026-11-09T17:00:00+03:00",
-   "intensity": 401.2
+   "time": "2026-11-11T03:00:00+03:00",
+   "intensity": 307.3
   },
   "dirtiest": {
    "time": "2026-11-09T12:00:00+03:00",
