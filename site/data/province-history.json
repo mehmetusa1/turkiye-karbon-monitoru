@@ -698,7 +698,7 @@
      "renewable_share": 0.95,
      "mix_pct": {
       "hydro": 27.5,
-      "wind": 33.2,
+      "wind": 33.1,
       "biomass": 20.5,
       "gas": 5.0,
       "solar": 13.9
@@ -2587,7 +2587,7 @@
     },
     {
      "month": "2026-11",
-     "avg_intensity": 557.0,
+     "avg_intensity": 556.9,
      "renewable_share": 0.433,
      "mix_pct": {
       "coal": 56.7,
