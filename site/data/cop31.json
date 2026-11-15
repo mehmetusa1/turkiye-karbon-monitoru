@@ -3,9 +3,9 @@
  "start": "2026-11-09T00:00:00+03:00",
  "end": "2026-11-21T00:00:00+03:00",
  "summary": {
-  "hours_counted": 161,
-  "avg_intensity": 379.6,
-  "avg_renewable_share": 0.53,
+  "hours_counted": 166,
+  "avg_intensity": 381.3,
+  "avg_renewable_share": 0.528,
   "cleanest": {
    "time": "2026-11-14T00:00:00+03:00",
    "intensity": 300.8
